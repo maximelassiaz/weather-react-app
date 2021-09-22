@@ -6,6 +6,8 @@
 
 **Weather React App** is a simple weather app made with React.js.
 
+It uses the [OpenWeatherMap API](https://openweathermap.org/) to fetch weather data.
+
 It includes the following features :
 * Show current weather 
 * Show hourly forecast for the next 24 hours
