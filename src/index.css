@@ -1,21 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: rgb(235, 154, 154);
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
+
+/** MAIN CONTENT **/
+
+.main-content {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/** CURRENT WEATHER **/
 
 .current-weather__card {
   background-color: rgb(129, 38, 38);
-  width: 75%;
-  margin: 20px auto;
   color: white;
   font-size: 25px;
   border-radius: 10px;
   padding: 10px;
+  width: 75vw;
+  margin: 0 auto;
 }
 
-.current-weather__icon {
+.current-weather__main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-weather__icon-weather {
   font-size: 10rem;
 }
+
+.current-weather__icon-plus {
+  align-self: flex-end;
+}
+
+.current-weather__extra-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+}
+
+.extra-info__label {
+  font-weight: 700;
+}
+

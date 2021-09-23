@@ -40,10 +40,12 @@ const App = () => {
 
   return (
     <>
-      { weather && <CurrentWeather 
-        currentWeatherData={weather.current}
-        units={units}
-      />}
+      <main className="main-content">
+        { weather && <CurrentWeather 
+          currentWeatherData={weather.current}
+          units={units}
+        /> }
+      </main>
     </>
   );
 }
