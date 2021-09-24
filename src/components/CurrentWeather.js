@@ -68,50 +68,48 @@ const CurrentWeather = ({ currentWeatherData, units }) => {
     const currentDay = `${month} ${day}`
 
     return (
-        <div className="current-weather">
-            <div className="current-weather__card">
-                <h2>{currentDay}</h2>
-                <div className="current-weather__main-info">
-                    <p className="current-weather__temperature">{`${temperature} ${temperatureUnit}`} </p>
-                    <Icon 
-                        className="current-weather__icon-weather"
-                        icon={weatherIcon} 
-                    />
-                    <p className="current-weather__description">{main}</p>
-                    <Icon 
-                        className="current-weather__icon-plus"
-                        icon={isExtraInfoOpen ? minusIcon : plusIcon} 
-                        onClick={handleClickExtraInfo}
-                    />
-                </div>
-                { isExtraInfoOpen && <div className="current-weather__extra-info">
-                    <div className="current-weather__real_feel extra-info__card">
-                        <p className="real_feel__label extra-info__label">Real feel</p>
-                        <p className="real_feel__value extra-info__value">{`${real_feel} ${temperatureUnit}`}</p>
-                    </div>
-                    <div className="current-weather__humidity extra-info__card">
-                        <p className="humidity__label extra-info__label">Humidity</p>
-                        <p className="humidity__value extra-info__value">{`${humidity}%`}</p>
-                    </div>
-                    <div className="current-weather__cloudiness extra-info__card">
-                        <p className="cloudiness__label extra-info__label">Cloudiness</p>
-                        <p className="cloudiness__value extra-info__value">{`${clouds}%`}</p>
-                    </div>
-                    <div className="current-weather__pressure extra-info__card">
-                        <p className="pressure__label extra-info__label">Pressure</p>
-                        <p className="pressure__value extra-info__value">{`${pressure} mbar`}</p>
-                    </div>
-                    {/* TODO : change wind speed to km/h */}
-                    <div className="current-weather__wind-speed extra-info__card">
-                        <p className="wind-speed__label extra-info__label">Wind speed</p>
-                        <p className="wind-speed__value extra-info__value">{`${getWindSpeed(wind_speed)} ${windSpeedUnit}`}</p>
-                    </div>
-                    <div className="current-weather__uvi extra-info__card">
-                        <p className="uvi__label extra-info__label">UV index</p>
-                        <p className="uvi__value extra-info__value">{Math.round(uvi)}</p>
-                    </div>
-                </div>}
+        <div className="current-weather box">
+            <h2>{currentDay}</h2>
+            <div className="current-weather__main-info">
+                <p className="current-weather__temperature">{`${temperature} ${temperatureUnit}`} </p>
+                <Icon 
+                    className="current-weather__icon-weather"
+                    icon={weatherIcon} 
+                />
+                <p className="current-weather__description">{main}</p>
+                <Icon 
+                    className="current-weather__icon-extra"
+                    icon={isExtraInfoOpen ? minusIcon : plusIcon} 
+                    onClick={handleClickExtraInfo}
+                />
             </div>
+            { isExtraInfoOpen && <div className="current-weather__extra-info">
+                <div className="current-weather__real_feel extra-info__card">
+                    <p className="real_feel__label extra-info__label">Real feel</p>
+                    <p className="real_feel__value extra-info__value">{`${real_feel} ${temperatureUnit}`}</p>
+                </div>
+                <div className="current-weather__humidity extra-info__card">
+                    <p className="humidity__label extra-info__label">Humidity</p>
+                    <p className="humidity__value extra-info__value">{`${humidity}%`}</p>
+                </div>
+                <div className="current-weather__cloudiness extra-info__card">
+                    <p className="cloudiness__label extra-info__label">Cloudiness</p>
+                    <p className="cloudiness__value extra-info__value">{`${clouds}%`}</p>
+                </div>
+                <div className="current-weather__pressure extra-info__card">
+                    <p className="pressure__label extra-info__label">Pressure</p>
+                    <p className="pressure__value extra-info__value">{`${pressure} mbar`}</p>
+                </div>
+                {/* TODO : change wind speed to km/h */}
+                <div className="current-weather__wind-speed extra-info__card">
+                    <p className="wind-speed__label extra-info__label">Wind speed</p>
+                    <p className="wind-speed__value extra-info__value">{`${getWindSpeed(wind_speed)} ${windSpeedUnit}`}</p>
+                </div>
+                <div className="current-weather__uvi extra-info__card">
+                    <p className="uvi__label extra-info__label">UV index</p>
+                    <p className="uvi__value extra-info__value">{Math.round(uvi)}</p>
+                </div>
+            </div>}
         </div>
     )
 }

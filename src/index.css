@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  --light: #ffffff;
+  --bg-color: rgba(129, 38, 38, 0.5);
+  --bg-color-dark: rgba(129, 38, 38, 1);
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: rgb(235, 154, 154);
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -20,16 +25,54 @@ body {
   align-items: center;
 }
 
+.box {
+  border-radius: 10px;
+  width: 75vw;
+  padding: 10px;
+}
+
+/** CITY FORM **/
+
+.city-form {
+  background-color: var(--bg-color);
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.city-form__label {
+  font-size: 20px;
+  align-self: center;
+}
+
+.city-form__input {
+  border-radius: 3px;
+  border: none;
+  padding: 3px;
+  margin: 5px;
+}
+
+.city-form__submit {
+  border-radius: 3px;
+  border: none;
+  padding: 3px;
+  margin: 5px;
+  color: var(--light);
+  background-color: var(--bg-color-dark);
+  font-weight: 700;
+}
+
 /** CURRENT WEATHER **/
 
-.current-weather__card {
-  background-color: rgb(129, 38, 38);
-  color: white;
+.current-weather {
+  background-color: var(--bg-color);
+  color: var(--light);
   font-size: 25px;
   border-radius: 10px;
-  padding: 10px;
-  width: 75vw;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .current-weather__main-info {
@@ -43,7 +86,7 @@ body {
   font-size: 10rem;
 }
 
-.current-weather__icon-plus {
+.current-weather__icon-extra {
   align-self: flex-end;
 }
 
@@ -57,5 +100,9 @@ body {
 
 .extra-info__label {
   font-weight: 700;
+}
+
+.extra-info__label {
+  align-self: flex-start;
 }
 
